@@ -37,4 +37,6 @@ with open(args.fname,newline='') as ifp:
 			'{%H:%M:%S}'.format(d1)
 			d2= datetime.datetime(h2+h,min2+minute,sec2+s)
 			'{%H:%M:%S}'.format(d2)
+			re.sub('.',',',d1)
+			re.sub('.',',',d2)
 			sys.stdout.write(d1,-->, d2)
