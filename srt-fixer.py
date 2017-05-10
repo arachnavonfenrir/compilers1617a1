@@ -18,14 +18,15 @@ with open(args.fname,newline='') as ifp:
 	minute=tmp/60
 	s=tmp%60
 	for line in ifp:
-		rexp=re.compile('([0-9]+):?([0-9]+):?([0-9]+),?([0-9]+)/s-+>?/s([0-9]+):?([0-9]+):?([0-9]+),?([0-9]+)')
+		rexp=re.compile('([0-9]+):([0-9]+):([0-9]+),([0-9]+)/s-->/s([0-9]+):([0-9]+):([0-9]+),([0-9]+)')
 		date=rexp.search(line)
 		
 		# -- αντικαταστήστε με τον δικό σας κώδικα (αρχή) --
 		if date is None:
-			sys.stdout.write(line)
+			
 		else:
 		# -- αντικαταστήστε με τον δικό σας κώδικα (τέλος) --
+			
 			seconds=date.group(3) 
 			miliseconds=date.group(4)
 			sec2=float(seconds)+float(miliseconds)/1000+s
@@ -42,8 +43,8 @@ with open(args.fname,newline='') as ifp:
 			d1= datetime.datetime(h2,min2,sec2)
 			'{%H:%M:%S}'.format(d1)
 			
-			d2= datetime.datetime(h2,min2,sec2)
+			d2= datetime.datetime(h3,min3,sec3)
 			'{%H:%M:%S}'.format(d2)
 			re.sub('.',',',d1)
 			re.sub('.',',',d2)
-			sys.stdout.write(d1," --> ", d2)
+			
