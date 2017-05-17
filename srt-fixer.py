@@ -52,8 +52,8 @@ with open(args.fname,newline='') as ifp:
 			allsec2=sec2+min2*60+h2*3600
 			allsec3=sec3=min3*60+h3*3600
 			
-			d1=datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(allsec2), "%H:%M:%S%f")			
-			d2=datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(allsec3), "%H:%M:%S%f")
+			d1=datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(allsec2), "%M:%S%f")			
+			d2=datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(allsec3), "%M:%S%f")
 
 			
 			re.sub('.',',',d1)
